@@ -1,19 +1,12 @@
-public class Email {
-    String email;
+class Email {
+    private String value;
 
-    public String getEmail() {
-        return email;
+    public Email(String value) {
+        this.value = value;
     }
 
-    public Email(String email) {
-        this.email = email;
+    @Override
+    public String toString() {
+        return value;
     }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public Email() {
-    }
-
 }

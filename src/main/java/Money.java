@@ -1,28 +1,22 @@
-public class Money {
-    double price;
-    String currency;
+class Money {
+    private double amount;
+    private String currency;
 
-    public Money() {
-    }
-
-    public Money(double price, String currency) {
-        this.price = price;
+    public Money(double amount, String currency) {
+        this.amount = amount;
         this.currency = currency;
     }
 
-    public double getPrice() {
-        return price;
-    }
-
-    public void setPrice(double price) {
-        this.price = price;
+    public double getAmount() {
+        return amount;
     }
 
     public String getCurrency() {
         return currency;
     }
 
-    public void setCurrency(String currency) {
-        this.currency = currency;
+    @Override
+    public String toString() {
+        return amount + " " + currency;
     }
 }

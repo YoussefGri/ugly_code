@@ -1,16 +1,23 @@
 class Order {
-    final Money money = new Money();
-    String productName;
-    double discountPercentage;
+    private String productName;
+    private Money price;
+    private Discount discount;
 
-
-    public Order(String productName,  double discountPercentage , Money money) {
+    public Order(String productName, Money price, Discount discount) {
         this.productName = productName;
-        this.discountPercentage = discountPercentage;
-        this.money.price = money.price;
+        this.price = price;
+        this.discount = discount;
     }
 
     public double computeFinalPrice() {
-        return money.price - (money.price * discountPercentage / 100);
+        return discount.apply(price);
+    }
+
+    @Override
+    public String toString() {
+        return "Produit: " + productName +
+                "\nPrix initial: " + price +
+                "\nRemise: " + discount +
+                "\nPrix final: " + computeFinalPrice() + " " + price.getCurrency();
     }
 }

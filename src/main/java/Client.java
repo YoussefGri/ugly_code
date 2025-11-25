@@ -18,14 +18,20 @@
  */
 
 class Client {
-    final Address address = new Address();
-    Phone phone = new Phone();
-    Email email = new Email();
-    String name;
+    private String name;
+    private Address address;
+    private PhoneNumber phone;
+    private Email email;
 
-    public Client(String name, Address address, Phone phone, Email email) {
+    public Client(String name, Address address, PhoneNumber phone, Email email) {
         this.name = name;
-        this.phone =phone;
-        this.email= email;
+        this.address = address;
+        this.phone = phone;
+        this.email = email;
+    }
+
+    @Override
+    public String toString() {
+        return name + "\nAdresse: " + address + "\nTéléphone: " + phone + "\nEmail: " + email;
     }
 }
