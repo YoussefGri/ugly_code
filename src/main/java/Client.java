@@ -18,14 +18,21 @@
  */
 
 class Client {
-    final Address address = new Address();
-    Phone phone = new Phone();
-    Email email = new Email();
     String name;
+    String address;
+    String city;
+    String postalCode;
+    String country;
+    String phone;
+    String email;
 
-    public Client(String name, Address address, Phone phone, Email email) {
+    public Client(String name, String address, String city, String postalCode, String country, String phone, String email) {
         this.name = name;
-        this.phone =phone;
-        this.email= email;
+        this.address = address;
+        this.city = city;
+        this.postalCode = postalCode;
+        this.country = country;
+        this.phone = phone;
+        this.email = email;
     }
 }

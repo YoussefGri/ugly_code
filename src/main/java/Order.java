@@ -1,16 +1,17 @@
 class Order {
-    final Money money = new Money();
     String productName;
+    double price;
     double discountPercentage;
+    String currency;
 
-
-    public Order(String productName,  double discountPercentage , Money money) {
+    public Order(String productName, double price, double discountPercentage, String currency) {
         this.productName = productName;
+        this.price = price;
         this.discountPercentage = discountPercentage;
-        this.money.price = money.price;
+        this.currency = currency;
     }
 
     public double computeFinalPrice() {
-        return money.price - (money.price * discountPercentage / 100);
+        return price - (price * discountPercentage / 100);
     }
 }
